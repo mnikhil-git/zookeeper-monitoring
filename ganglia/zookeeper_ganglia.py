@@ -224,6 +224,7 @@ def metric_cleanup():
 if __name__ == '__main__':
     ds = metric_init({'host':'localhost', 'port': '2181'})
     while True:
+        metrics_data = metric_handler()
         for d in ds:
             zk_metric_key = d['name']
             if metrics_data.has_key(zk_metric_key):
